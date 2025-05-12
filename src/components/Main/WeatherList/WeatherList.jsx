@@ -4,9 +4,23 @@ import axios from "axios";
 import "./WeatherList.css";
 
 const WeatherList = () => {
-
-  const [city, setValue] = useState("New York"); // Para guardar el dato a buscar
+  const [city, setValue] = useState(); // Para guardar el dato a buscar
   const [posts, setPosts] = useState([]); // Para guardar los posts
+
+    // Llama a getLocation al montar el componente y establece la ciudad predeterminada
+  useEffect(() => {
+    const fetchDefaultCity = async () => {
+     try {
+      const res = await axios.get(`https://ipinfo.io/json?token=${import.meta.env.VITE_LOCATION}`);
+      const data = await res.data;
+      setValue(data.city);  
+    } catch (error) {
+      console.error("Error fetching location:", error);
+      setValue("Madrid"); 
+    }
+    };
+    fetchDefaultCity();
+  }, []);
 
   // equivale a un componentDidUpdate()
   useEffect(() => {
@@ -15,7 +29,6 @@ const WeatherList = () => {
         // Petición HTTP
         const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_KEY}`);
         const json = await res;
-        console.log(json.data);
         
         // Guarda en el array de posts el resultado. Procesa los datos
         setPosts(json.data);
