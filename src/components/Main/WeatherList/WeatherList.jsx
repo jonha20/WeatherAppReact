@@ -45,6 +45,7 @@ const WeatherList = () => {
     e.preventDefault();
     console.log(e.target.city.value)
     setValue(e.target.city.value) // Modificando el estado de Value
+    e.target.city.value = ""; // Limpiando el input
   };
 
   
