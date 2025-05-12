@@ -35,10 +35,10 @@ Este proyecto es una aplicación simple de clima desarrollada con **React** que 
 ## 🖼️ Capturas de pantalla
 
 ### 🏙️ Clima en las ciudades
-<div style="display: flex; gap: 90px; justify-content: center">
-  <img src="./src/assets/madrid.png" alt="AutoDetectCity" width="30%" />
-  <img src="./src/assets/cacere.png" alt="AutoDetectCity" width="30%" />
-</div>
+<p align="center">
+  <img src="./src/assets/madrid.png" alt="Madrid" width="300"/>
+  <img src="./src/assets/cacere.png" alt="Caceres" width="276"/>
+</p>
 
 
 ---
