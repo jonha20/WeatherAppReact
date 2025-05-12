@@ -1,12 +1,57 @@
-# React + Vite
+# 🌦️ Weather App con React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación simple de clima desarrollada con **React** que muestra la información meteorológica de una ciudad mediante la API de **OpenWeatherMap**. Además, utiliza la API de **ipinfo.io** para detectar la ciudad del usuario y mostrar automáticamente su clima local al iniciar la app.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Demo en producción
 
-## Expanding the ESLint configuration
+👉 [https://cheerful-pegasus-a503e1.netlify.app](https://cheerful-pegasus-a503e1.netlify.app)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Funcionalidades
+
+- ✅ Proyecto realizado con React.
+- 🌍 Llamada a la API de ipinfo.io para obtener la ciudad actual mediante la IP del usuario.
+- 🏙️ Llamada a la API de OpenWeatherMap para mostrar el clima de la ciudad.
+- 📥 Al iniciar la app, se detecta la ciudad actual y se muestra automáticamente el tiempo.
+- 🔄 Manejo de formulario con `setValue` y `setPosts` para cambiar la ciudad manualmente.
+- 📡 Uso de `axios` para las llamadas HTTP a las APIs.
+- 🔃 Al cambiar de ciudad, se hace una nueva llamada a la API y se actualiza la información en pantalla.
+
+---
+
+## 🧰 Tecnologías utilizadas
+
+- React
+- React Hooks: `useState`, `useEffect`
+- Axios
+- OpenWeatherMap API
+- IPinfo API
+
+---
+
+## 🖼️ Capturas de pantalla
+
+### 🏙️ Clima en las ciudades
+<div style="display: flex; gap: 90px; justify-content: center">
+  <img src="./src/assets/madrid.png" alt="AutoDetectCity" width="30%" />
+  <img src="./src/assets/caceres.png" alt="SearchCity" width="30%" />
+</div>
+
+
+---
+
+## 🚀 Cómo iniciar el proyecto
+
+```bash
+# Clona el repositorio
+git clone https://github.com/jonha20/ToDo_List.git
+cd ToDo_List
+
+# Instala las dependencias
+npm install
+
+# Crea tu archivo de entorno
+cp .env.example .env
