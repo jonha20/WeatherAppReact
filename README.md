@@ -37,7 +37,7 @@ Este proyecto es una aplicación simple de clima desarrollada con **React** que 
 ### 🏙️ Clima en las ciudades
 <div style="display: flex; gap: 90px; justify-content: center">
   <img src="./src/assets/madrid.png" alt="AutoDetectCity" width="30%" />
-  <img src="./src/assets/caceres.png" alt="SearchCity" width="30%" />
+  <img src="./src/assets/cacere.png" alt="AutoDetectCity" width="30%" />
 </div>
 
 
@@ -47,8 +47,8 @@ Este proyecto es una aplicación simple de clima desarrollada con **React** que 
 
 ```bash
 # Clona el repositorio
-git clone https://github.com/jonha20/ToDo_List.git
-cd ToDo_List
+git clone https://github.com/jonha20/WeatherAppReact.git
+cd WeatherAppReact
 
 # Instala las dependencias
 npm install
