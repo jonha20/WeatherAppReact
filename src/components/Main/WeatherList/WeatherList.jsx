@@ -27,11 +27,18 @@ const WeatherList = () => {
     async function fetchData() {
       try {
         // Petición HTTP
-        const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_KEY}`);
-        const json = await res;
+        //const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_KEY}`);
+        const res = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${import.meta.env.VITE_KEY}`);
+        const json = await res.data.list;
+      //   console.log(json);
+      //   json.forEach((posts, index) => {
+      //     console.log(posts.dt);
+      //     console.log(index);
+      // })
+        
         
         // Guarda en el array de posts el resultado. Procesa los datos
-        setPosts(json.data);
+        setPosts(json);
         
       }catch(e){
         console.log(e);
@@ -51,13 +58,17 @@ const WeatherList = () => {
   
 
   return <section className="city">
-  <h1>City</h1>
+  <h1>{city}</h1>
   <form onSubmit={handleSubmit}>
     <input name="city"/>
     <button>Buscar</button>
   </form>
 
-  { <WeatherCard key={posts.id} city={posts} /> }
+  <article>
+      {posts.map((post, index) => (
+        <WeatherCard key={index} city={post} />
+      ))}
+    </article>
 </section>
 };
 

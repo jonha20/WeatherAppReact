@@ -5,24 +5,10 @@ import snowImage from "../../../../assets/snow.png";
 import sunImage from "../../../../assets/sunny.png";
 import cloudImage from "../../../../assets/clouds.png";
 
-const WeatherCard = ({ city }) => {
-  // Convert timestamp to local time based on city's timezone offset
-  const convertToLocalTime = (timestamp, timezoneOffset) => {
-    const utcDate = new Date(timestamp * 900); // Convert timestamp to UTC date
-    const localDate = new Date(utcDate.getTime() + timezoneOffset * 1000); // Adjust for city's timezone offset
-    return localDate.toLocaleString("es-ES", {
-      weekday: "long", // Show day of the week
-      hour: "2-digit", // Show hour
-      minute: "2-digit", // Show minutes
-    });
-  };
-
-  // Use city's timezone offset (in seconds) to calculate local time
-  const localTime = convertToLocalTime(city.dt, city.timezone);
-
+const WeatherCard = ({ city  }) => {
   return (
-    <article>
-      <h1>{city.name}</h1>
+    <>
+    <div>
       {city.weather?.[0]?.description.includes("rain") ? (
         <img src={rainImage} alt="" />
       ) : city.weather?.[0]?.description.includes("snow") ? (
@@ -34,10 +20,11 @@ const WeatherCard = ({ city }) => {
       ) : (
         <img src={cloudImage} alt="" />
       )}
-      <p>{localTime}</p>
+      <p>{city.dt_txt}</p>
       <p>{city.weather?.[0]?.description || "No description available"}</p>
       <p>Clouds: {city.clouds?.all || "N/A"}%</p>
-    </article>
+      </div>
+    </>
   );
 };
 

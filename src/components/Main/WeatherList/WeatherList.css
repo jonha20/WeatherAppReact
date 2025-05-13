@@ -1,5 +1,5 @@
 section.city {
-    max-width: 600px;
+    max-width: 100%;
     margin: 30px auto;
     padding: 20px;
     border: 1px solid #ddd;
@@ -49,4 +49,23 @@ section.city {
   
   section.city button:hover {
     background-color: #0056b3;
+  }
+  
+  /* Estilo para las tarjetas */
+  section.city article {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta el número de columnas automáticamente */
+    gap: 20px; /* Espaciado entre las tarjetas */
+    margin-top: 20px;
+  }
+  
+  section.city article {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
   }

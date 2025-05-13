@@ -1,6 +1,6 @@
 # 🌦️ Weather App con React
 
-Este proyecto es una aplicación simple de clima desarrollada con **React** que muestra la información meteorológica de una ciudad mediante la API de **OpenWeatherMap**. Además, utiliza la API de **ipinfo.io** para detectar la ciudad del usuario y mostrar automáticamente su clima local al iniciar la app.
+Este proyecto es una aplicación simple de clima desarrollada con **React** que muestra la información meteorológica de una ciudad en los proximos 3 dias mediante la API de **OpenWeatherMap**. Además, utiliza la API de **ipinfo.io** para detectar la ciudad del usuario y mostrar automáticamente su clima local al iniciar la app.
 
 ---
 
@@ -36,8 +36,7 @@ Este proyecto es una aplicación simple de clima desarrollada con **React** que 
 
 ### 🏙️ Clima en las ciudades
 <p align="center">
-  <img src="./src/assets/madrid.png" alt="Madrid" width="300"/>
-  <img src="./src/assets/cacere.png" alt="Caceres" width="276"/>
+  <img src="./src/assets/image.png" alt="image" width="300"/>
 </p>
 
 
