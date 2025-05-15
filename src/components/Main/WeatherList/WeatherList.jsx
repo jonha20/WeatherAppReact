@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import WeatherCard from "./WeatherCard";
 import axios from "axios";
 import "./WeatherList.css";
+import { v4 as uuidv4 } from 'uuid';
 
 const WeatherList = () => {
   const [city, setValue] = useState(); // Para guardar el dato a buscar
@@ -27,15 +28,8 @@ const WeatherList = () => {
     async function fetchData() {
       try {
         // Petición HTTP
-        //const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_KEY}`);
         const res = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${import.meta.env.VITE_KEY}`);
         const json = await res.data.list;
-      //   console.log(json);
-      //   json.forEach((posts, index) => {
-      //     console.log(posts.dt);
-      //     console.log(index);
-      // })
-        
         
         // Guarda en el array de posts el resultado. Procesa los datos
         setPosts(json);
@@ -65,8 +59,8 @@ const WeatherList = () => {
   </form>
 
   <article>
-      {posts.map((post, index) => (
-        <WeatherCard key={index} city={post} />
+      {posts.map((post) => (
+        <WeatherCard key={uuidv4()} city={post} />
       ))}
     </article>
 </section>
